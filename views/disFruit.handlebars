@@ -1,0 +1,23 @@
+<section id="search" class="search-wrap">
+    <form action="/fruit/search" class="search-form">
+     
+      <input type="search" name="term" placeholder="Avocado, Cauliflower, Spinach, etc...">
+      <input type="submit" value="Search">
+    </form>
+  </section>
+<section id="fruit" class="container">
+    <h1>All Fruits</h1>
+
+    {{#each fruit}}
+      <div class="gig">
+      <h3><a href="/fruit/show/{{name}}">{{name}}</a></h3>
+      <ul><p><li>Season: &nbsp;{{season}}</li></p></ul>
+      <div class="tech">
+        <small>Description: &nbsp;<span>{{description}}</span></small>
+      </div>
+    </div>
+    {{else}}
+      <p>No fruits available</p>
+    {{/each}}
+    
+  </section>

@@ -1,0 +1,23 @@
+<section id="add" class="container">
+  <h2>Log in to Farm Buddy</h2>
+  <p style="color:#000;">
+    {{> messages}}
+       {{#each errors}}
+         <p style="text-align:center;"> {{msg}}</p>
+       {{/each}}
+      </p>
+      <form action="/users/login" method="POST">
+        <div class="input-group">
+          <label for="season">Email </label>
+          <input type="email" name="email" id="email" class="input-box"
+          maxlength="100" value={{email}}>
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" class="input-box">
+        </div>
+        <input type="submit" value="Login" class="btn btn-reverse">
+      </form>
+      <p >Don't have an account? <a href="/users/register" class="btn-block" style="color:#568c9b">Register</a>
+      </p>
+  </section>

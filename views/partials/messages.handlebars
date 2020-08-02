@@ -1,0 +1,23 @@
+{{#if error}}
+<div class="alert alert-error alert-block close">
+{{error}}
+</div>
+{{/if}}
+
+{{#if error.msg}}
+<div class="alert alert-info ">
+{{errors.msg}}
+</div>
+{{/if}}
+
+{{#if success_msg}}
+<div class="alert alert-success alert-block close">
+{{success_msg}}
+</div>
+{{/if}}
+
+{{#if error_msg}}
+<div class="alert alert-info alert-block close ">
+{{error_msg}}
+</div>
+{{/if}}

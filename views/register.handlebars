@@ -1,0 +1,35 @@
+<section id="add" class="container">
+  <h2>Create an account</h2>
+  <p style="color:#000;">
+      {{> messages}}
+      {{#if errors}}
+       {{#each errors}}
+         <div class="alert alert-info"> {{msg}}</div>
+       {{/each}}
+       {{/if}}
+      </p>
+      <form action="/users/register" method="POST">
+        <div class="input-group">
+          <label for="name"> Name</label>
+          <input type="text" name="name" id="name" class="input-box"
+            maxlength="100" value={{name}}>
+        </div>
+        <div class="input-group">
+          <label for="season">Email </label>
+          <input type="email" name="email" id="email" class="input-box"
+          maxlength="100" value={{email}}>
+        </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" class="input-box">
+          
+        </div>
+        <div class="input-group">
+          <label for="confirmpassword">Confirm Password</label>
+          <input type="password" name="password2" id="password2" class="input-box">
+        </div>
+        <input type="submit" value="Create" class="btn btn-reverse">
+      </form>
+      <p >Have an account? <a href="/users/login" class="btn-block" style="color:#568c9b">Login</a>
+      </p>
+  </section>

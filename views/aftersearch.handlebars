@@ -1,0 +1,23 @@
+<section id="crop" class="container">
+    <h1>Found</h1>
+
+    {{#if crop}}
+      <div class="gig">
+      <h3><a href="/crop/show/{{name}}">{{name}}</a></h3>
+      <ul>
+        <p>
+      <li>Season: &nbsp;{{season}}</li>
+      <li>Type: &nbsp;{{crtype}}</li>
+    </p>
+      </ul>
+      <div class="tech">
+        <small>Description: &nbsp;<span>
+        {{description}}
+      </span></small>
+      </div>
+    </div>
+    {{else}}
+      <p>No crops available</p>
+    {{/if}}
+    
+  </section>

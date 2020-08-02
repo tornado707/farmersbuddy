@@ -1,0 +1,96 @@
+<section class="container">
+<div class = "">
+	<h1>
+		{{crop.name}}
+		{{fertilizer.name}}
+		{{fruit.name}}
+		{{flower.name}}
+		{{machine.name}}
+	</h1>
+    <div class = "fix-image">
+     {{#if crop.imageUrl}}
+	<img src="/img/{{crop.imageUrl}}">
+     {{else}}
+     {{#if fertilizer.imageUrl}}
+     <img src="/img/{{fertilizer.imageUrl}}">
+     {{else}}
+     {{#if flower.imageUrl}}
+     <img src="/img/{{flower.imageUrl}}">
+     {{else}}
+     {{#if fruit.imageUrl}}
+     <img src="/img/{{fruit.imageUrl}}">
+     {{else}}
+     {{#if machine.imageUrl}}
+     <img src="/img/{{machine.imageUrl}}">
+     {{else}}
+     <div class="noimage">
+     <img src = "/img/noimageavailable.png" >
+     </div>
+     {{/if}}
+     {{/if}}
+     {{/if}}
+     {{/if}}
+     {{/if}}
+ </div>
+	<div class="tech">
+        <medium><span><p>
+        {{crop.description}}
+		{{fertilizer.uses}}
+		{{fruit.description}}
+		{{flower.description}}
+		{{machine.info}}</p></span></medium>
+      </div>
+     <p>
+     	{{#if crop.season}}
+     	<h4>Season: {{crop.season}}</h4>
+     	{{/if}}
+     	{{#if fertilizer.price}}
+     	<h4>Price: {{fertilizer.price}}</h4>
+     	{{/if}}
+     	{{#if flower.season}}
+     	<h4>Season: {{flower.season}}</h4>
+     	{{/if}}
+     	{{#if fruit.season}}
+     	<h4>Season: {{fruit.season}}</h4>
+     	{{/if}}
+     	{{#if machine.price}}
+     	<h4>Price: {{machine.price}}</h4>
+     	{{/if}}
+     </p>
+     <p>
+     	{{#if crop.crtype}}
+     	<h4>Type: {{crop.crtype}}</h4>
+     	{{/if}}
+     	{{#if flower.fltype}}
+     	<h4>Type: {{flower.fltype}}</h4>
+     	{{/if}}
+     	{{#if machine.uses}}
+     	<h4>Uses: </h4> <small> {{machine.uses}}</small>
+     	{{/if}}
+     </p>
+    
+     
+     {{#if machine.videoUrl}}
+          <div class = "videowrapper">
+          <p>
+               <iframe width="543" height="305" src="{{machine.videoUrl}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+           </p>
+          </div>
+           {{else}}
+     {{#if fertilizer.videoUrl}}
+           <div class = "videowrapper">
+           <p>
+               <iframe width="543" height="305" src="{{fertilizer.videoUrl}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+           </p>
+           </div>
+           {{else}}
+     {{#if null}}
+            <div class="noimage">
+                <img src = "/img/noimageavailable.png" >
+            </div>
+     
+    {{/if}}
+     {{/if}}
+     {{/if}}
+</div>
+</section>

@@ -1,0 +1,28 @@
+<section id="search" class="search-wrap">
+    <form action="/flower/search" class="search-form">
+      
+      <input type="search" name="term" placeholder="Avocado, Cauliflower, Spinach, etc...">
+      <input type="submit" value="Search">
+    </form>
+  </section>
+<section id="flower" class="container">
+    <h1>All Flowers</h1>
+
+    {{#each flower}}
+      <div class="gig">
+      <h3><a href="/flower/show/{{name}}">{{name}}</a></h3>
+      <ul>
+      <p>
+        <li>Season:  &nbsp;{{season}}</li>
+        <li>Type: &nbsp;{{fltype}}</li>
+        </p>
+      </ul>
+      <div class="tech">
+        <small>Description: &nbsp;<span>{{description}}</span></small>
+      </div>
+    </div>
+    {{else}}
+      <p>No flowers available</p>
+    {{/each}}
+    
+  </section>

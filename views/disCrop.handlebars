@@ -1,0 +1,30 @@
+<section id="search" class="search-wrap">
+    <form action="/crop/search" class="search-form">
+      
+      <input type="search" name="term" placeholder="Avocado, Cauliflower, Spinach, etc...">
+      <input type="submit" value="Search">
+    </form>
+  </section>
+<section id="crop" class="container">
+    <h1>All Crops</h1>
+
+    {{#each crop}}
+      <div class="gig">
+      <h3><a href="/crop/show/{{name}}">{{name}}</a></h3>
+      <ul>
+        <p>
+      <li>Season: &nbsp;{{season}}</li>
+      <li>Type: &nbsp;{{crtype}}</li>
+    </p>
+      </ul>
+      <div class="tech">
+        <small>Description: &nbsp;<span>
+        {{description}}
+      </span></small>
+      </div>
+    </div>
+    {{else}}
+      <p>No crops available</p>
+    {{/each}}
+    
+  </section>

@@ -1,0 +1,27 @@
+<section id="search" class="search-wrap">
+    <form action="/machine/search" class="search-form">
+        <input type="search" name="term" placeholder="Avocado, Cauliflower, Spinach, etc...">
+        <input type="submit" value="Search">
+    </form>
+</section>
+<section id="machine" class="container">
+    <h1>All Machines</h1>
+    {{#each machine}}
+    <div class="gig">
+        <h3><a href="/machine/show/{{name}}">{{name}}</a></h3>
+        <ul>
+            <p>
+                <li>Price: &nbsp;Rs {{price}}</li>
+            </p>
+        </ul>
+        <p>
+            <div class="tech">
+                <small>Information: &nbsp;<span>{{info}}
+                    </span></small>
+            </div>
+        </p>
+    </div>
+    {{else}}
+    <p>No machines available</p>
+    {{/each}}
+</section>

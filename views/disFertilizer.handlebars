@@ -1,0 +1,25 @@
+<section id="search" class="search-wrap">
+    <form action="/fertilizer/search" class="search-form">
+      
+      <input type="search" name="term" placeholder="Avocado, Cauliflower, Spinach, etc...">
+      <input type="submit" value="Search">
+    </form>
+  </section>
+<section id="fertilizer" class="container">
+    <h1>All Fertilizers</h1>
+
+    {{#each fertilizer}}
+      <div class="gig">
+      <h3><a href="/fertilizer/show/{{name}}">{{name}}</a></h3>
+      <ul>
+     <p> <li>Price: &nbsp;Rs {{price}}</li></p>
+      </ul>
+      <div class="tech">
+        <small>Uses: &nbsp;<span>{{uses}}</span></small>
+      </div>
+    </div>
+    {{else}}
+      <p>No fertilizers available</p>
+    {{/each}}
+    
+  </section>
