@@ -4,14 +4,11 @@ const exphbs = require('express-handlebars');
 const db = require('../config/database');
 
 const Crop = require('../models/Crop');
-const Fertilizer = require('../models/Fertilizer');
-const Flower = require('../models/Flower');
-const Fruit = require('../models/Fruit');
-const Machine = require('../models/Machine');
 
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 const { ensureAuthenticated } = require('../config/auth');
+const { ensureRoleAuthenticated } = require('../config/authRole');
 
 //show all crops
 router.get('/show', ensureAuthenticated, (req,res) => 

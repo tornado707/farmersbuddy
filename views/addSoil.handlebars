@@ -1,32 +1,27 @@
 <section id="add" class="container">
     <div class="form-wrap">
-      <h1>Add Fruits</h1>
+      <h1>Add Soil</h1>
       <p>Fill in the form</p>
       {{#each errors}}
         <div class="error">
           <p>{{text}}</p>
         </div>
       {{/each}}
-      <form action="/fruit/add" method="POST">
+      <form action="/soil/add" method="POST">
         <div class="input-group">
-          <label for="name">Fruit Name</label>
+          <label for="name">Soil Name</label>
           <input type="text" name="name" id="name" class="input-box" placeholder="eg. "
             maxlength="100" value={{name}}>
         </div>
          <div class="input-group">
-          <label for="season">Seasons</label>
+          <label for="season">Place</label>
           <input type="text" name="season" id="season" class="input-box" placeholder="eg. "
-            maxlength="100" value={{name}}>
+            maxlength="100" value={{place}}>
         </div>
         <div class="input-group">
-          <label for="description">Description</label>
+          <label for="description">Type</label>
           <textarea name="description" id="description" class="input-box" placeholder="Describe the info of the machine"
-            rows="10">{{description}}</textarea>
-        </div>
-        <div class="input-group">
-          <label for="season">Image Url</label>
-          <input type="text" name="imageUrl" id="imageUrl" class="input-box" placeholder="eg. "
-            maxlength="100" value={{imageUrl}}>
+            rows="10">{{type}}</textarea>
         </div>
         <input type="submit" value="Add Fruit" class="btn btn-reverse">
       </form>

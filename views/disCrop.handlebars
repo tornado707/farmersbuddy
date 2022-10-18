@@ -1,12 +1,12 @@
 <section id="search" class="search-wrap">
     <form action="/crop/search" class="search-form">
       
-      <input type="search" name="term" placeholder="Avocado, Cauliflower, Spinach, etc...">
+      <input type="search" name="term" placeholder="Nodejs, Python, C++, C etc...">
       <input type="submit" value="Search">
     </form>
   </section>
 <section id="crop" class="container">
-    <h1>All Crops</h1>
+    <h1>All Tutorials</h1>
 
     {{#each crop}}
       <div class="gig">
@@ -24,7 +24,7 @@
       </div>
     </div>
     {{else}}
-      <p>No crops available</p>
+      <p>No Tutorials available</p>
     {{/each}}
     
   </section>

@@ -58,7 +58,8 @@ router.post('/register', (req, res) => {
         const newUser = new User({
           name,
           email,
-          password
+          password,
+          role: "Admin"
         });
 
         bcrypt.genSalt(10, (err, salt) => {

@@ -61,13 +61,12 @@ app.use(function(req, res, next) {
 //app.get('/', (req, res) => res.render('welcome', { layout: 'landing' }));
 app.use('/', require('./routes/index'));
 //route
-//app.use('/', require('./routes/login'));
 app.use('/users' ,require('./routes/users'));
 app.use('/crop', require('./routes/crop'));
 app.use('/flower', require('./routes/flower'));
 app.use('/fertilizer', require('./routes/fertilizer'));
 app.use('/machine', require('./routes/machine'));
-app.use('/fruit', require('./routes/fruit'));
+app.use('/soil', require('./routes/soil'));
 
 const PORT = process.env.PORT || 4000;
 

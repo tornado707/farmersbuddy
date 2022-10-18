@@ -1,14 +1,14 @@
 const Sequelize = require('sequelize');
 const db = require('../config/database');
 
-module.exports = db.define('fruits', {
+module.exports = db.define('markets', {
   name: {
     type: Sequelize.STRING
   },
-  season: {
+  place: {
     type: Sequelize.STRING
   },
-  description: {
+  rate: {
     type: Sequelize.STRING
   },
   imageUrl: {

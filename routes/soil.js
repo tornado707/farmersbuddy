@@ -1,17 +1,17 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../config/database');
-const Fruit = require('../models/Fruit');
+const Soil = require('../models/Soil');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 const { ensureAuthenticated } = require('../config/auth');
 
-//show all fruit
+//show all soil
 router.get('/show',ensureAuthenticated, (req,res) => 
-	Fruit.findAll()
-	.then(fruit => {
-		res.render('disFruit', {
-			fruit
+	Soil.findAll()
+	.then(soil => {
+		res.render('disSoil', {
+			soil
 		});
 	})
 	.catch(err => console.log(err)));
@@ -19,51 +19,54 @@ router.get('/show',ensureAuthenticated, (req,res) =>
 //detail view
 router.get('/show/:name',ensureAuthenticated, (req,res) => 
 	{
-	Fruit.findOne({where: {
+	Soil.findOne({where: {
 		name: req.params.name
-	}}).then(fruit => {
+	}}).then(soil => {
 		res.render('detailAll', {
-			fruit : fruit.dataValues
+			soil : soil.dataValues
 		})
 	}).catch(err => console.log(err));
 	}
 	);
 
-//display add fruit form
+//display add soil form
 router.get('/add',ensureAuthenticated, (req,res) => {
-	res.render('addFruit');
+	res.render('addSoil');
 });
 
-//add fruit to database
+//add soil to database
 router.post('/add' ,ensureAuthenticated, (req,res) => {
 
-	let {name,season,description,imageUrl} = req.body;
+	let {name,type,place} = req.body;
 
 	let errors = [];
 	//errors or blank check
 	if(!name){
-		errors.push({text: 'PLease add a name'});
+		errors.push({text: 'Please add a name'});
 	}
-	if(!season){
-		errors.push({text: 'PLease add season'});
+	if(!type){
+		errors.push({text: 'Please add type'});
+	}
+	if(!place){
+		errors.push({text: 'Please add place'});
 	}
 	
 	//check for errors
 	if(errors.length > 0){
-		res.render('addFruit', {
+		res.render('addSoil', {
 			errors,
 			name,
-			season
+			type,
+			place
 		})};
 
 	//insert into table
-	Fruit.create({
+	Soil.create({
 		name: name,
-		season: season,
-		description: description,
-		imageUrl: imageUrl
+		type: type,
+		place: place
 	})
-		.then(fruit => res.redirect('/fruit/add'))
+		.then(soil => res.redirect('/soil/add'))
 		.catch(err => console.log(err));
 
 });
@@ -75,8 +78,8 @@ router.get('/search',ensureAuthenticated, (req, res) => {
   // Make lowercase
  // term = term.toLowerCase();
 
-  Fruit.findAll({ where: { name: { [Op.like]: term } } })
-    .then(fruit => res.render('disFruit', { fruit }))
+  Soil.findAll({ where: { name: { [Op.like]: term } } })
+    .then(soil => res.render('dissoil', { soil }))
     .catch(err => console.log(err));
 });
 
